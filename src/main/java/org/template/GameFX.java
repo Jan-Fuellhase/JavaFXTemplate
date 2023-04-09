@@ -7,6 +7,7 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -102,6 +103,17 @@ public class GameFX {
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
     }
-
+    public static void slowMovingText(TextArea label, String text1){  //geht auch mit label statt text
+        final int[] index = {0};
+        // Erstellen Sie die Animation, um den Text langsam anzuzeigen
+        Timeline timeline = new Timeline(new KeyFrame(Duration.millis(50), event -> {
+            if (index[0] < text1.length()) {
+                label.setText(label.getText() + text1.charAt(index[0]));
+                index[0]++;
+            }
+        }));
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
+    }
     // other methods you may need to access, etc...
 }

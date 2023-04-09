@@ -154,8 +154,8 @@ public class JavaFXApp extends Application {
         text1.setWrapText(true);
         ergebnistext.setEditable(false);
         ergebnistext.setWrapText(true);
-        ergebnistext.setText("--- Willkommen bei dieser App! ---\n--- Hoffentlich hast du einen schönen Tag! ---\n--- Wie schön diese App doch aussieht, wer die wohl gemacht hat? ---       \n\n\n\n                                                       ¯\\_(ツ)_/¯");
-
+//        ergebnistext.setText("--- Willkommen bei dieser App! ---\n--- Hoffentlich hast du einen schönen Tag! ---\n--- Wie schön diese App doch aussieht, wer die wohl gemacht hat? ---       \n\n\n\n                                                       ¯\\_(ツ)_/¯");
+        GameFX.slowMovingText(ergebnistext, "--- Willkommen bei dieser App! ---\n--- Hoffentlich hast du einen schönen Tag! ---\n--- Wie schön diese App doch aussieht, wer die wohl gemacht hat? ---       \n\n\n\n                                                       ¯\\\\_(ツ)_/¯");
 
         var copyright = new Text("");  //"                      © Jan Füllhase 2023"
         Text headline = new Text("Text eingeben:");
