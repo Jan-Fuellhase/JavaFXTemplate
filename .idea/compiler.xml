@@ -9,8 +9,5 @@
         <module name="Template-janflh" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Enchro2" target="11" />
-    </bytecodeTargetLevel>
   </component>
 </project>
