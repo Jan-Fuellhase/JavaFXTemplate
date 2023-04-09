@@ -64,7 +64,7 @@ public class JavaFXApp extends Application {
     public void start(Stage stage) {
 
         //play musik sound.mp3 in bin folder
-        Extratools.playMusikInBackground();
+//        Extratools.playMusikInBackground();
 
         Button buttonverschlüsseln = new Button("\uD83D\uDD10 Button1");
         Button buttonentschlüsseln = new Button("\uD83D\uDD11 Button2");
@@ -157,7 +157,7 @@ public class JavaFXApp extends Application {
         ergebnistext.setText("--- Willkommen bei dieser App! ---\n--- Hoffentlich hast du einen schönen Tag! ---\n--- Wie schön diese App doch aussieht, wer die wohl gemacht hat? ---       \n\n\n\n                                                       ¯\\_(ツ)_/¯");
 
 
-        Text copyright = new Text("                      © Jan Füllhase 2023");  //"                      © Jan Füllhase 2023"
+        var copyright = new Text("");  //"                      © Jan Füllhase 2023"
         Text headline = new Text("Text eingeben:");
         fragegeburtsort = new Text("Jan's Geburtsort:");
         fragepasswort = new Text("Passwort:");
@@ -172,7 +172,11 @@ public class JavaFXApp extends Application {
         passwortvisible(false, false);
         buttonpasswortmodus.setOnAction(b -> passwortvisible(true, true));
 
-
+        Button startButton = new Button("Start Game");
+        startButton.setOnAction(e -> {
+            GameFX game = new GameFX();
+            stage.getScene().setRoot(game.getRootPane());
+        });
 
 
         //Buttons hinzufügen
@@ -203,6 +207,7 @@ public class JavaFXApp extends Application {
         HeadlingandDropbownBox.getChildren().add(headline);
         HeadlingandDropbownBox.getChildren().add(new Text("                  "));
         HeadlingandDropbownBox.getChildren().add(dropdown256);
+        HeadlingandDropbownBox.getChildren().add(startButton);
         //am ende box und textarea hinzufügen
         GridPane grid = new GridPane();
         grid.setPadding(new Insets(5, 5, 5, 5));
@@ -254,6 +259,8 @@ public class JavaFXApp extends Application {
             }
         });
 
+        GameFX.slowMovingText(copyright,"                © Jan Füllhase 2023");
+
         //https://stackoverflow.com/questions/20049452/javafx-focusing-textfield-programmatically
         text1.requestFocus();
 
@@ -263,7 +270,7 @@ public class JavaFXApp extends Application {
         stage.getIcons().add(new Image("file:enchro2.png"));
         stage.setScene(scene);
         stage.setHeight(476);
-        stage.setWidth(650);
+        stage.setWidth(670);
         stage.show();
 
     }
